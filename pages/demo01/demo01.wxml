@@ -1,0 +1,25 @@
+<Tabs></Tabs>	
+<text></text>
+<view>{{msg}}</view>
+<view>{{number}}</view>
+<view>{{person}}</view>
+<view>{{person.name}}</view>
+<view>
+	<checkbox checked="{{isChecked}}"></checkbox>
+</view>
+<view wx:for="{{list}}" 
+wx:for-index="index" 
+wx:for-item="item"
+wx:key="*this">
+	索引：{{index}}
+	--
+	值:{{item.name}}
+</view>
+<view>
+	<view wx:for="{{person}}"
+	 wx:for-index="value" 
+	 wx:for-item="key"
+	 wx:key="*this">
+	 	{{value}}:{{key}}
+	 </view>
+</view>

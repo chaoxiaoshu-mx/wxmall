@@ -1,0 +1,55 @@
+<view class="pyg_index">
+	<!-- 搜索 -->
+	<search-input></search-input>
+	<!-- 搜索 结束 -->
+	<!-- 轮播图 开始 -->
+	<view class="index_swiper">
+		<swiper indicator-dots autoplay interval="1000"	circular>
+			<swiper-item
+			wx:for="{{swiperList}}"
+			wx:key="id"
+			>
+				<navigator>
+					<image src="http://wxmall.test{{item.image_src}}" mode="widthFix"></image>
+				</navigator>
+			</swiper-item>
+		</swiper>
+	</view>
+	<!-- 轮播图 结束 -->
+	<!-- 导航 开始 -->
+	<view class="index_category">
+		<navigator wx:for="{{categoryList}}"
+		wx:key="id">
+			<image src="{{item.image_src}}" mode="widthFix"></image>
+			{{item.name}}
+		</navigator>
+	</view>
+	<!-- 导航 结束 -->
+	<!-- 楼层 开始 -->
+
+	<view class="index_floor">
+		<view class="floor_group"
+		wx:for="{{floor}}"
+		wx:for-item="item1"
+		wx:for-index="index1"
+		wx:key="name"
+		>
+			<!-- 标题 -->
+			<image class="" src="{{item1.image_src}}" mode="widthFix"></image>
+			<!-- 内容 -->
+			<view class="floor_list">
+				<navigator 
+				wx:for="{{item1.floorlist}}"
+				wx:for-item="item2"
+				wx:for-index="index2"
+				wx:key="id"
+				>
+					<image class="" src="{{item2.image_src}}" mode="widthFix"></image>
+					<text>{{item2.name}}</text>
+				</navigator>
+
+			</view>
+		</view>
+	</view>
+	<!-- 楼层 结束 -->
+</view>
